@@ -1,6 +1,8 @@
 import type {
 	INodeType,
+	IExecuteFunctions,
 	INodeTypeDescription,
+	INodeExecutionData,
 } from 'n8n-workflow';
 
 
@@ -19,4 +21,8 @@ export class AfterShip implements INodeType {
 		outputs: ['main'],
 		properties: [],
 	};
+
+	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+		return this.prepareOutputData([]);
+	}
 }
