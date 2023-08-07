@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-aftership-demo",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "AfterShip N8N Connector",
   "keywords": [
     "n8n-community-node-package"
