@@ -1,6 +1,6 @@
 {
   "name": "@yangyao/n8n-nodes-aftership",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "AfterShip N8N Connector",
   "keywords": [
     "n8n-community-node-package"
@@ -33,6 +33,7 @@
       "dist/credentials/AfterShipApi.credentials.js"
     ],
     "nodes": [
+      "dist/nodes/AfterShip/AfterShip.node.js",
       "dist/nodes/AfterShip/AfterShipTrigger.node.js"
     ]
   },
