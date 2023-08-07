@@ -1,6 +1,6 @@
 {
-  "name": "@yangyao/n8n-nodes-aftership",
-  "version": "1.0.2",
+  "name": "n8n-nodes-aftership-demo",
+  "version": "1.0.3",
   "description": "AfterShip N8N Connector",
   "keywords": [
     "n8n-community-node-package"
@@ -37,10 +37,6 @@
     ]
   },
   "private": false,
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/request-promise-native": "~1.0.18",
