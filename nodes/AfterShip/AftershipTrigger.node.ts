@@ -43,17 +43,19 @@ export class AftershipTrigger implements INodeType {
 		const headerData = this.getHeaderData();
 		const credentials = await this.getCredentials('aftershipApi');
 		const secret = credentials.webhook_secret as string;
-		if (headerData['Aftership-Hmac-Sha256'] === undefined) {
-			console.log(`Aftership-Hmac-Sha256 not found`);
-			return {};
+		let signature = "";
+		for (let key of Object.keys(headerData)) {
+				if (key.toLowerCase() === 'aftership-hmac-sha256'){
+					signature = headerData[key] as string;
+				}
 		}
 
-		const computedSignature = createHmac('sha256', secret).update(req.rawBody).digest('base64');
+		const computedSignature = createHmac('sha256', secret).update(JSON.stringify(req.body)).digest('base64');
 
-		if (headerData['Aftership-Hmac-Sha256'] !== computedSignature) {
+		if (signature !== computedSignature) {
 			// Signature is not valid so ignore call
 			return {
-				workflowData: [this.helpers.returnJsonArray({error: "Signature is not valid so ignore call"} as IDataObject)],
+				// workflowData: [this.helpers.returnJsonArray({rawBody: JSON.stringify(req.body), error: "Signature is not valid so ignore call", computedSignature, signature} as IDataObject)],
 			};
 		}
 		return {

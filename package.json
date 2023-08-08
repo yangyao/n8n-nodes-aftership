@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-aftership-demo",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Aftership N8N Connector",
   "keywords": [
     "n8n-community-node-package"
@@ -33,7 +33,6 @@
       "dist/credentials/AftershipApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/AfterShip/Aftership.node.js",
       "dist/nodes/AfterShip/AftershipTrigger.node.js"
     ]
   },
