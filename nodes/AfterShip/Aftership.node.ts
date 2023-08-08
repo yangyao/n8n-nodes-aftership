@@ -6,7 +6,7 @@ import type {
 } from 'n8n-workflow';
 
 
-export class AfterShip implements INodeType {
+export class Aftership implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'AfterShip',
 		name: 'aftership',

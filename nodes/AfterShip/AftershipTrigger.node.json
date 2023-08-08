@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.afterShipTrigger",
+	"node": "n8n-nodes-base.aftershipTrigger",
 	"nodeVersion": "1.0.0",
 	"codexVersion": "1.0.0",
 	"categories": ["Shipment Tracking"],

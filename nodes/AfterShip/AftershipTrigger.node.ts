@@ -8,14 +8,14 @@ import type {
 
 import { createHmac } from 'crypto';
 
-export class AfterShipTrigger implements INodeType {
+export class AftershipTrigger implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'AfterShip Trigger',
 		name: 'aftershipTrigger',
 		icon: 'file:aftership.svg',
 		group: ['trigger'],
 		version: 1,
-		description: 'Handle AfterShip events via webhooks',
+		description: 'Handle Aftership events via webhooks',
 		defaults: {
 			name: 'AfterShip Trigger',
 		},
@@ -44,6 +44,7 @@ export class AfterShipTrigger implements INodeType {
 		const credentials = await this.getCredentials('aftershipApi');
 		const secret = credentials.webhook_secret as string;
 		if (headerData['Aftership-Hmac-Sha256'] === undefined) {
+			console.log(`Aftership-Hmac-Sha256 not found`);
 			return {};
 		}
 
@@ -51,7 +52,9 @@ export class AfterShipTrigger implements INodeType {
 
 		if (headerData['Aftership-Hmac-Sha256'] !== computedSignature) {
 			// Signature is not valid so ignore call
-			return {};
+			return {
+				workflowData: [this.helpers.returnJsonArray({error: "Signature is not valid so ignore call"} as IDataObject)],
+			};
 		}
 		return {
 			workflowData: [this.helpers.returnJsonArray(req.body as IDataObject)],

@@ -5,7 +5,7 @@ import {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class AfterShipApi implements ICredentialType {
+export class AftershipApi implements ICredentialType {
 	name = 'aftershipApi';
 	displayName = 'AfterShip API';
 	properties: INodeProperties[] = [
@@ -16,12 +16,18 @@ export class AfterShipApi implements ICredentialType {
 			displayName: 'Webhook secret',
 			name: 'webhook_secret',
 			type: 'string',
+			typeOptions: {
+				password: true,
+			},
 			default: '',
 		},
 		{
 			displayName: 'API Key',
 			name: 'api_key',
 			type: 'string',
+			typeOptions: {
+				password: true,
+			},
 			default: '',
 		},
 	];
