@@ -1,8 +1,9 @@
 {
-  "name": "n8n-nodes-aftership-demo",
-  "version": "1.0.13",
-  "description": "Aftership N8N Connector",
+  "name": "n8n-nodes-aftership",
+  "version": "1.0.0",
+  "description": "AfterShip n8n Connector",
   "keywords": [
+    "AfterShip",
     "n8n-community-node-package"
   ],
   "license": "MIT",
@@ -37,7 +38,7 @@
     ]
   },
   "private": false,
-  "dependencies": {
+  "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/request-promise-native": "~1.0.18",
     "@typescript-eslint/parser": "~6.2",

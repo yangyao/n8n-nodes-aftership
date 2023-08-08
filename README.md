@@ -1,1 +1,3 @@
-## under development , please don't use it on production.
+## AfterShip connector for n8n.io
+
+
